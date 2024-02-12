@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -27,7 +28,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.project.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.project.create', compact('types', 'technologies'));
     }
 
     /**
@@ -41,6 +43,9 @@ class ProjectController extends Controller
         $project->slug = Str::of($project->title)->slug('-');
         $project->save();
 
+        if (isset($data['technologies'])) {
+            $project->technologies()->sync($data['technologies']);
+        }
         return redirect()->route('admin.project.index')->with('success', 'Progetto aggiunto!');
     }
 

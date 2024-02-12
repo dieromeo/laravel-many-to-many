@@ -33,10 +33,21 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3 col-9">
-                <label for="used_languages" class="form-label">Linguaggi e Framework</label>
-                <input type="text" class="form-control" id="used_languages" name="used_languages"
-                    value="{{ old('used_languages') }}">
+            <div class="mb-3">
+                <div>
+                    <label class="form-label">Tags</label>
+                </div>
+
+                @foreach ($technologies as $technology)
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="{{ $technology->id }}" name="technologies[]"
+                            id="technology-{{ $technology->id }}"
+                            {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}>
+                        <label class="form-check-label"
+                            for="technology-{{ $technology->id }}">{{ $technology->title }}</label>
+                    </div>
+                @endforeach
+
             </div>
             <div class="mb-3">
                 <label for="descrizione" class="form-label">Descrizione Progetto</label>
