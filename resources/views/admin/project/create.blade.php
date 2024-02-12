@@ -4,7 +4,7 @@
 
         @include('partials.errors')
 
-        <form action={{ route('admin.project.store') }} method="POST" class="d-flex row">
+        <form action={{ route('admin.project.store') }} method="POST" class="d-flex row text-light">
             @csrf
             <div class="mb-3 col-6">
                 <label for="nome" class="form-label">Nome Progetto</label>
@@ -28,7 +28,7 @@
                 <select class="form-select" aria-label="Default select example" name="type_id">
                     <option selected>Scegli un tipo per il progetto</option>
                     @foreach ($types as $type)
-                        <option value="{{ $type->id }}" @if (old('type_id', $project->type_id) == $type->id) selected @endif>
+                        <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>
                             {{ $type->title }}</option>
                     @endforeach
                 </select>

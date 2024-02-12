@@ -4,7 +4,7 @@
 
         @include('partials.errors')
 
-        <form action={{ route('admin.project.update', $project) }} method="POST" class="d-flex row p-4">
+        <form action={{ route('admin.project.update', $project) }} method="POST" class="d-flex row p-4 text-light">
             @csrf
             @method('PUT')
             <div class="mb-3 col-6">
