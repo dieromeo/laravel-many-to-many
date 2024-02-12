@@ -63,7 +63,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.project.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.project.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -72,6 +73,9 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
+        if (isset($data['technologies'])) {
+            $project->technologies()->sync($data['technologies']);
+        }
         $project->update($data);
         return redirect()->route('admin.project.index')->with('edit', 'Progetto modificato!');
     }
