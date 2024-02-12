@@ -73,6 +73,16 @@
                                 <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.types.create') }}">Aggiungi tipo di progetto </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.technologies.index') }}">Visualizza linguaggi e framework
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.technologies.create') }}">Aggiungi un linguaggio o framework
+                                </a>
+                            </li>
                         </ul>
 
 
