@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
+.card {
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+#sidebarMenu a:hover {
+    background-color: var(--bs-info-border-subtle);
+}
