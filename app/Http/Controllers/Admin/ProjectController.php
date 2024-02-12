@@ -75,6 +75,8 @@ class ProjectController extends Controller
         $data = $request->validated();
         if (isset($data['technologies'])) {
             $project->technologies()->sync($data['technologies']);
+        } else {
+            $project->technologies()->sync([]);
         }
         $project->update($data);
         return redirect()->route('admin.project.index')->with('edit', 'Progetto modificato!');
