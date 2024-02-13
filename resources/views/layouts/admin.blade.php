@@ -58,28 +58,28 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item w-100">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.project.index' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.project.index') }}"> Progetti </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.project.create' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.project.create') }}"> Create Project </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.types.index' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.types.index') }}"> Tipi di progetto </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.types.create' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.types.create') }}">Aggiungi tipo di progetto </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.technologies.index' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.technologies.index') }}">Visualizza linguaggi e framework
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-dark {{ Route::currentRouteName() == 'admin.technologies.create' ? 'a-selected' : '' }}"
                                     href="{{ route('admin.technologies.create') }}">Aggiungi un linguaggio o framework
                                 </a>
                             </li>
