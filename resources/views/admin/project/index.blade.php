@@ -8,7 +8,7 @@
             @foreach ($projects as $project)
                 <div class="col">
                     <div class="card h-100">
-                        <img src="{{ $project->screen }}" class="card-img-top" alt="{{ $project->title }}">
+                        <img src="{{ asset('storage/' . $project->screen) }}" class="card-img-top" alt="{{ $project->title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $project->title }}</h5>
                             <p class="card-text overflow-auto">{{ $project->description }}</p>

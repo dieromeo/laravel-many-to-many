@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -41,6 +42,7 @@ class ProjectController extends Controller
         $project = new Project();
         $project->fill($data);
         $project->slug = Str::of($project->title)->slug('-');
+        $project->screen = Storage::put('uploads', $data['screen']);
         $project->save();
 
         if (isset($data['technologies'])) {

@@ -4,7 +4,8 @@
 
         @include('partials.errors')
 
-        <form action={{ route('admin.project.store') }} method="POST" class="d-flex row text-light">
+        <form action={{ route('admin.project.store') }} method="POST" enctype="multipart/form-data"
+            class="d-flex row text-light">
             @csrf
             <div class="mb-3 col-6">
                 <label for="nome" class="form-label">Nome Progetto</label>
@@ -14,11 +15,11 @@
                 <label for="link" class="form-label">Link Progetto</label>
                 <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}">
             </div>
-            <div class="mb-3 col-3">
-                <label for="screen" class="form-label">Screenshot Progetto</label>
-                <input type="text" class="form-control" id="tipo" name="screen" value="{{ old('screen') }}">
-            </div>
             <div class="mb-3 col-9">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile" name="screen">
+            </div>
+            <div class="mb-3 col-3">
                 <label for="collaborators" class="form-label">Collaboratori</label>
                 <input type="text" class="form-control" id="collaborators" name="collaborators"
                     value="{{ old('collaborators') }}">
