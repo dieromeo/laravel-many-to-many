@@ -11,13 +11,17 @@
                         id="technologies-list">{{ $technology->title }}</a>
                 </div>
                 <div class="d-flex col-auto justify-content-end">
-                    <a href="{{ route('admin.technologies.edit', $technology->id) }}"
-                        class="btn btn-primary btn-sm  align-self-center">Modifica</a>
+                    <a href="{{ route('admin.technologies.edit', $technology->id) }}" class="btn align-self-center"><lord-icon
+                            src="https://cdn.lordicon.com/wuvorxbv.json" trigger="hover" stroke="light" state="hover-line"
+                            colors="primary:#fff,secondary:#fff">
+                        </lord-icon></a>
                     <form action="{{ route('admin.technologies.destroy', $technology) }}" method="POST"
                         class="align-self-center ms-2">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" class="btn btn-danger btn-sm" value="Elimina">
+                        <button type="submit" class="btn"><lord-icon src="https://cdn.lordicon.com/drxwpfop.json"
+                                trigger="hover" stroke="light" colors="primary:#fff,secondary:#fff">
+                            </lord-icon></button>
                     </form>
                 </div>
             </div>
